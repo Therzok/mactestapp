@@ -1,6 +1,7 @@
 ﻿using System;
 
 using AppKit;
+using CoreGraphics;
 using Foundation;
 
 namespace mactestapp {
@@ -12,6 +13,14 @@ namespace mactestapp {
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+
+            var panel = new NSSavePanel();
+            panel.DidChangeToDirectory += (o, args) => {
+                var url = args.NewDirectoryUrl;
+                Console.WriteLine(url.Path);
+            };
+
+            View.AddSubview(NSButton.CreateButton("a", () => panel.RunModal()));
 
 			// Do any additional setup after loading the view.
 		}
