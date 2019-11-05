@@ -26,9 +26,9 @@ namespace mactestapp {
 			//	Console.WriteLine ("Registration handler");
 			//});
 			//DispatchSource.Resume ();
-			Task.Run (async () => {
-				await new MacPlatform.Tests.MemoryMonitorTests ().TestMemoryMonitorWithSimulatedValues ();
-			});
+			//Task.Run (async () => {
+			//	await new MacPlatform.Tests.MemoryMonitorTests ().TestMemoryMonitorWithSimulatedValues ();
+			//});
 		}
 
 		public override void DidFinishLaunching (NSNotification notification)
